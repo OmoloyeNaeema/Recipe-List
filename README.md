@@ -1,44 +1,116 @@
-# Roo Commander Build - v{BUILD_VERSION} ({BUILD_CODENAME})
+# Movie Wishlist
 
-**Build Date:** {BUILD_DATE}
+A full-stack application for managing your movie watchlist with a modern, animated UI and real-time updates.
 
-## Overview
+## Features
 
-This archive contains the configuration files for Roo Commander, a system designed to enhance AI-assisted software development within VS Code.
+- Add movies to your watchlist with titles and notes
+- Rate movies using a 5-star rating system
+- Mark movies as watched/unwatched
+- Sort movies by newest or oldest first
+- Animated movie posters for visual appeal
+- Responsive design that works on all devices
+- Real-time notifications for all actions
+- Dark theme with gold accents
 
-## Installation
+## Tech Stack
 
-1.  **Ensure you are in your desired VS Code workspace root directory.** This is the top-level folder of the project you want Roo Commander to assist with.
-2.  **Extract the contents of this zip archive directly into your workspace root.**
+### Frontend
+- React 18
+- Material-UI (MUI) v5 for components and styling
+- Framer Motion for animations
+- Axios for API calls
 
-This will create/overwrite the following hidden directories and files:
+### Backend
+- .NET 8.0
+- ASP.NET Core Web API
+- Entity Framework Core with PostgreSQL
+- Swagger/OpenAPI for API documentation
 
-*   `.ruru/modes/` (Contains all mode definitions)
-*   `.ruru/processes/` (Contains standard process definitions)
-*   `.roo/` (Contains Roo Commander specific rules and configurations)
-*   `.ruru/templates/` (Contains templates for various artifacts)
-*   `.ruru/workflows/` (Contains workflow definitions)
-*   `.ruru/archive/` (Empty placeholder)
-*   `.ruru/context/` (Empty placeholder)
-*   `.ruru/decisions/` (Empty placeholder)
-*   `.ruru/docs/` (Empty placeholder)
-*   `.ruru/ideas/` (Empty placeholder)
-*   `.ruru/logs/` (Empty placeholder)
-*   `.ruru/planning/` (Empty placeholder)
-*   `.ruru/reports/` (Empty placeholder)
-*   `.ruru/snippets/` (Empty placeholder)
-*   `.ruru/tasks/` (Empty placeholder)
-*   `build_mode_summary.js`
-*   `build_roomodes.js`
-*   `LICENSE`
-*   `.roomodes`
+## Prerequisites
 
-**Important:** Extracting these files may overwrite existing configurations if you have previously set up Roo Commander.
+- Node.js (v16 or higher)
+- .NET 8.0 SDK
+- PostgreSQL database
 
-## Usage
+## Getting Started
 
-Once extracted, Roo Commander should be active within your VS Code workspace (you might need to reload the window). You can interact with it via the chat interface.
+### Backend Setup
 
-## Changelog
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
 
-Please refer to `CHANGELOG.md` (included in this archive) for details on what's new in this version.
+2. Install the .NET dependencies:
+   ```bash
+   dotnet restore
+   ```
+
+3. Update the database connection string in `appsettings.json` if needed
+
+4. Run the migrations:
+   ```bash
+   dotnet ef database update
+   ```
+
+5. Start the backend server:
+   ```bash
+   dotnet run
+   ```
+
+The API will be available at `http://localhost:5005`
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+   ```bash
+   cd my-app
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+The application will open in your default browser at `http://localhost:3000`
+
+## Project Structure
+
+```
+Movie Wishlist/
+├── backend/                 # .NET backend
+│   ├── Controllers/        # API endpoints
+│   ├── Models/            # Data models and DB context
+│   └── Properties/        # Launch settings
+├── my-app/                 # React frontend
+│   ├── public/           # Static assets
+│   └── src/             # React components and logic
+│       ├── AddMovieForm.js
+│       ├── MovieList.js
+│       └── App.js
+```
+
+## API Endpoints
+
+- `GET /api/Movies` - Get all movies
+- `POST /api/Movies` - Add a new movie
+- `PUT /api/Movies/{id}` - Update a movie (rating, watched status)
+- `DELETE /api/Movies/{id}` - Delete a movie
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
