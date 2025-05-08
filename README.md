@@ -1,17 +1,15 @@
-# Movie Wishlist
+# Recipe App
 
-A full-stack application for managing your movie watchlist with a modern, animated UI and real-time updates.
+A full-stack application for managing your recipe collection with a modern, user-friendly interface and real-time updates.
 
 ## Features
 
-- Add movies to your watchlist with titles and notes
-- Rate movies using a 5-star rating system
-- Mark movies as watched/unwatched
-- Sort movies by newest or oldest first
-- Animated movie posters for visual appeal
+- Add recipes with titles, ingredients, and instructions
+- View detailed recipe information
+- Edit or delete existing recipes
+- Search and filter recipes by name or ingredients
 - Responsive design that works on all devices
-- Real-time notifications for all actions
-- Dark theme with gold accents
+- Real-time updates for recipe changes
 
 ## Tech Stack
 
@@ -39,7 +37,7 @@ A full-stack application for managing your movie watchlist with a modern, animat
 
 1. Navigate to the backend directory:
    ```bash
-   cd backend
+   cd ServerSide
    ```
 
 2. Install the .NET dependencies:
@@ -65,7 +63,7 @@ The API will be available at `http://localhost:5005`
 
 1. Navigate to the frontend directory:
    ```bash
-   cd my-app
+   cd ClientSide
    ```
 
 2. Install dependencies:
@@ -83,25 +81,26 @@ The application will open in your default browser at `http://localhost:3000`
 ## Project Structure
 
 ```
-Movie Wishlist/
-├── backend/                 # .NET backend
+Recipe App/
+├── ServerSide/             # .NET backend
 │   ├── Controllers/        # API endpoints
-│   ├── Models/            # Data models and DB context
-│   └── Properties/        # Launch settings
-├── my-app/                 # React frontend
-│   ├── public/           # Static assets
-│   └── src/             # React components and logic
-│       ├── AddMovieForm.js
-│       ├── MovieList.js
+│   ├── Models/             # Data models and DB context
+│   └── Properties/         # Launch settings
+├── ClientSide/             # React frontend
+│   ├── public/             # Static assets
+│   └── src/                # React components and logic
+│       ├── AddRecipeForm.js
+│       ├── RecipeList.js
+│       ├── RecipeDetails.js
 │       └── App.js
 ```
 
 ## API Endpoints
 
-- `GET /api/Movies` - Get all movies
-- `POST /api/Movies` - Add a new movie
-- `PUT /api/Movies/{id}` - Update a movie (rating, watched status)
-- `DELETE /api/Movies/{id}` - Delete a movie
+- `GET /api/Recipes` - Get all recipes
+- `POST /api/Recipes` - Add a new recipe
+- `PUT /api/Recipes/{id}` - Update a recipe
+- `DELETE /api/Recipes/{id}` - Delete a recipe
 
 ## Contributing
 
